@@ -9,14 +9,11 @@ sys.path.append(os.path.join
 from khighlights import KindleHighlights
 
 
-class KindleHighlightsTest():
+class TestKindleHighlights():
 
     @pytest.fixture
     def setup(self):
         return KindleHighlights('B00H992JJA')
 
-    def get_num_of_popular_test(self):
-        expected = 5
-        actual = setup.get_num_popular()
-
-        assert_that(actual, equal_to(expected))
+    def test_get_num_of_popular(self, setup):
+        assert setup.get_num_popular(), "should get num of popular highlights"
