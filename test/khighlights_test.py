@@ -13,7 +13,7 @@ class TestKindleHighlights():
 
     @pytest.fixture
     def setup(self):
-        return KindleHighlights('B00H992JJA')
+        self.highlight = KindleHighlights('B00H992JJA')
 
-    def test_get_num_of_popular(self, setup):
-        assert setup.get_num_popular(), "should get num of popular highlights"
+    def test_scrape_popular_highlight(self, setup):
+        assert self.highlight, "should be not Null"
